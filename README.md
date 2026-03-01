@@ -152,5 +152,4 @@ pnpm preview
 
 ## License
 
-No `LICENSE` file is published yet.
-Until a license is added, redistribution and commercial use terms are not explicitly granted.
+AGPL-3.0 license

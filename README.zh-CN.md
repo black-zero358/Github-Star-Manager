@@ -152,5 +152,4 @@ pnpm preview
 
 ## 许可证
 
-当前仓库尚未发布 `LICENSE` 文件。
-在补充许可证前，分发与商用授权条款尚未明确授予。
+AGPL-3.0 license
