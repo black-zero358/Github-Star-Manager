@@ -84,15 +84,42 @@ pnpm preview
 - 基于 Existing Lists 的约束模式
 - 中英文 Prompt 变体
 
-## 典型使用流程
+## 使用指南
 
-1. 连接 PAT。
-2. 点击 `Sync Star Lists`。
-3. （可选）在状态面板重试失败的列表成员扫描。
-4. 打开 `Run Classification` 执行分类。
-5. 查看分类预览与差异视图。
-6. 打开 `Apply Updates` 查看将写回 GitHub 的变更。
-7. 执行写回。
+### 第一步：获取 GitHub Personal Access Token
+
+1. 访问 [https://github.com/settings/tokens](https://github.com/settings/tokens)。
+2. 点击 **Generate new token** → **Generate new token (classic)**。
+3. 填写一个描述性名称（如 `star-manager`）。
+4. 授予以下权限范围：
+   - **repo** — 勾选 `repo` 下的所有权限
+   - **user** — 勾选 `user` 下的所有权限
+5. 点击 **Generate token** 并复制生成的 Token。
+
+获取 Token 后，打开应用并点击 **Sync Star Lists**，验证 Token 是否正常工作、能否成功同步你的 Star 仓库列表。
+
+### 第二步：配置应用
+
+#### GitHub Token
+
+1. 打开应用的 **Settings** 页面（或点击 **Connect PAT**）。
+2. 粘贴在第一步生成的 Token。
+3. 点击 **Validate** 进行验证并保存。
+
+#### LLM 配置
+
+1. 在 **Settings → LLM Configuration** 中填写：
+   - **Base URL** — 你的 OpenAI 兼容 LLM 服务端点地址。
+   - **API Key** — 你的 LLM API 密钥。
+   - **Model Name** — 用于分类的模型名称。
+2. 点击 **Run Classification** 开始分类流程。
+3. 建议先使用 **测试模式（Test Mode）** 运行小样本，确认模型工作正常后再处理全部仓库。
+
+### 第三步：应用更新至 GitHub
+
+1. 分类完成后，查看差异预览（Diff Preview）。
+2. 点击 **Apply Updates**，将分类结果（Star List 分配）推送到你的 GitHub 账号。
+3. 应用会自动创建缺失的 Star Lists，并更新仓库的列表归属关系。
 
 ## 项目结构
 

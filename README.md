@@ -84,15 +84,42 @@ You can run classification without changing prompts, or customize prompts for:
 - existing-list constrained modes
 - English/Chinese prompt variants
 
-## Typical Workflow
+## Usage Guide
 
-1. Connect PAT.
-2. Click `Sync Star Lists`.
-3. (Optional) Retry failed list membership scans from the status panel.
-4. Open `Run Classification` and run LLM classification.
-5. Review preview and diffs.
-6. Open `Apply Updates` to preview planned GitHub changes.
-7. Apply updates to GitHub.
+### Step 1: Obtain a GitHub Personal Access Token
+
+1. Go to [https://github.com/settings/tokens](https://github.com/settings/tokens).
+2. Click **Generate new token** → **Generate new token (classic)**.
+3. Give it a descriptive name (e.g. `star-manager`).
+4. Grant the following permission scopes:
+   - **repo** — all permissions under `repo`
+   - **user** — all permissions under `user`
+5. Click **Generate token** and copy the generated token.
+
+After obtaining the token, open the app and click **Sync Star Lists** to verify that the token works and your starred repositories can be synced successfully.
+
+### Step 2: Configure the App
+
+#### GitHub Token
+
+1. Open the app's **Settings** page (or click **Connect PAT**).
+2. Paste the token you generated in Step 1.
+3. Click **Validate** to verify and save.
+
+#### LLM Configuration
+
+1. In **Settings → LLM Configuration**, fill in:
+   - **Base URL** — the endpoint of your OpenAI-compatible LLM service.
+   - **API Key** — your LLM API key.
+   - **Model Name** — the model to use for classification.
+2. Click **Run Classification** to start the classification pipeline.
+3. It is recommended to use **Test Mode** first to run a small sample and verify that the model is working correctly before processing all repositories.
+
+### Step 3: Apply Updates to GitHub
+
+1. After classification is complete, review the diff preview.
+2. Click **Apply Updates** to push the classification results (Star List assignments) to your GitHub account.
+3. The app will create any missing Star Lists and update repository memberships accordingly.
 
 ## Project Structure
 
