@@ -4,6 +4,10 @@
 
 Star Manager 是一个本地优先（local-first）的 Web 应用，用于整理你的 GitHub Star 仓库与 Star Lists，并支持可选的 LLM 辅助分类。
 
+如果您想在不进行本地设置的情况下体验该应用，可以使用[在线部署](https://github-star-manager.blackzero.edu.kg)。
+
+
+
 ## 为什么使用 Star Manager
 
 当 Star 仓库数量变多后，手工维护列表效率低且容易不一致。Star Manager 可以帮助你：
