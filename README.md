@@ -4,6 +4,9 @@
 
 Star Manager is a local-first web app for organizing GitHub starred repositories with Star Lists and optional LLM-assisted classification.
 
+An [online deployment](https://github-star-manager.blackzero.edu.kg) is available if you want to explore the app without setting up locally.
+
+
 ## Why Star Manager
 
 If you have hundreds of starred repositories, manual list management is slow and inconsistent. Star Manager helps you:
