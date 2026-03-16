@@ -53,6 +53,8 @@ export function AssignListModal({ isOpen, repoId, repoName, onClose }: AssignLis
     try {
       await setRepoListMembership(repoId, selectedListIds);
       setStatus(t("assignList.status.saved"));
+      // 延迟 300ms 后自动关闭弹窗
+      setTimeout(onClose, 300);
     } catch (error) {
       setStatus((error as Error).message || t("assignList.status.saveFailed"));
     } finally {
